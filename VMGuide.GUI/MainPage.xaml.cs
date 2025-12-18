@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Input;
 using System.Windows.Navigation;
 using System.Collections.Generic;
 
@@ -76,29 +75,11 @@ namespace VMGuide
             check_biosdate.IsChecked = CurrentVM.DateLock;
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.GetWindow(this).Close();
-        }
-
-        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.GetWindow(this).WindowState = WindowState.Minimized;
-        }
-
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (NavigationService.CanGoBack)
             {
                 NavigationService?.GoBack();
-            }
-        }
-
-        private void TitleBar_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                MainWindow.GetWindow(this).DragMove();
             }
         }
 

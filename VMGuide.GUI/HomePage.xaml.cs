@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Navigation;
 
 namespace VMGuide
@@ -69,24 +68,6 @@ namespace VMGuide
             VMware.SearchVM(ref VMware_OC);
             VirtualBox.SearchVM(ref VBox_OC);
             VirtualPC.SearchVM(ref VirtualPC_OC);
-        }
-
-        private void TitleBar_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                MainWindow.GetWindow(this).DragMove();
-            }
-        }
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.GetWindow(this).Close();
-        }
-
-        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.GetWindow(this).WindowState = WindowState.Minimized ;
         }
 
         private void VMLists_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -181,13 +162,13 @@ namespace VMGuide
         }
         
 
-        private void RefreshMenuClicked(object sender, MouseButtonEventArgs e)
+        private void RefreshMenuClicked(object sender, RoutedEventArgs e)
         {
-            settingsToggle.IsChecked = false;
+            settingsPopup.IsPopupOpen = false;
             Refresh();
         }
 
-        private void AboutMenuClicked(object sender, MouseButtonEventArgs e)
+        private void AboutMenuClicked(object sender, RoutedEventArgs e)
         {
             var FileVersion = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileVersionInfo;
 
