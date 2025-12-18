@@ -1,4 +1,4 @@
-﻿<Application x:Class="VMGuide.App"
+<Application x:Class="VMGuide.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:VMGuide"
@@ -8,12 +8,14 @@
             <local:BooleanToCollapseConverter x:Key="BooleanToCollapseConverter"/>
             <local:BooleanReverseConverter x:Key="BooleanReverseConverter"/>
             <local:BooleanReverseToCollapseConverter x:Key="BooleanReverseToCollapseConverter"/>
-            
+
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
-    
+
 </Application>
-    
